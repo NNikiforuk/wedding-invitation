@@ -6,6 +6,26 @@
 		font-display: swap;
     }
 
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #f8f6e6;
+	}
+
+	h1 {
+		font-size: 22px;
+		margin-top: 0.25em;
+	}
+
+	h2 {
+		margin: 0 0 1em;
+		font-weight: normal;
+		color: #111827;
+		font-size: 20px;
+	}
+
 h1, #details h2 {
 		font-family: "Tangerine", sans-serif;
     }
@@ -35,4 +55,75 @@ section {
 	.button:hover {
 		background-color: rgb(13, 72, 13);
 		color: aliceblue;
+	}
+
+	.leaf {
+		height: 40px;
+		width: auto;
+		opacity: 0.9;
+		position: relative;
+		transform-origin: left center;
+	}
+
+	.leaf1,
+	.leaf5 {
+		left: 10px;
+		animation: wave1 4.2s infinite ease-in-out;
+	}
+
+	.leaf2,
+	.leaf6 {
+		left: -5px;
+		animation: wave2 4.7s infinite ease-in-out;
+	}
+
+	.leaf3,
+	.leaf7 {
+		left: 15px;
+		animation: wave3 4.5s infinite ease-in-out;
+	}
+
+	.leaf4 {
+		left: 0px;
+		animation: wave4 4.9s infinite ease-in-out;
+	}
+
+	@keyframes wave1 {
+		0%,
+		100% {
+			transform: rotate(2deg);
+		}
+		50% {
+			transform: rotate(-3deg) translateX(-3px);
+		}
+	}
+
+	@keyframes wave2 {
+		0%,
+		100% {
+			transform: rotate(-1deg);
+		}
+		50% {
+			transform: rotate(4deg) translateX(2px);
+		}
+	}
+
+	@keyframes wave3 {
+		0%,
+		100% {
+			transform: rotate(0deg);
+		}
+		50% {
+			transform: rotate(-5deg) translateX(-4px);
+		}
+	}
+
+	@keyframes wave4 {
+		0%,
+		100% {
+			transform: rotate(-2deg);
+		}
+		50% {
+			transform: rotate(3deg) translateX(3px);
+		}
 	}

@@ -1,8 +1,25 @@
 ---
-import Welcome from "../components/Welcome.astro";
-import Layout from "../layouts/Layout.astro";
+import "../styles.css";
+import Header from "../components/Header.astro";
+import Details from "../components/function-components/Details";
+import PhotoSlider from "../components/function-components/PhotoSlider";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>14.06.2025</title>
+	</head>
+	<body>
+		<div class="container">
+			<Header />
+			<main class="h-full flex flex-col justify-center">
+				<PhotoSlider client:load />
+				<Details />
+			</main>
+		</div>
+	</body>
+</html>
