@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import photo2019 from "../../assets/2019.webp";
 import photo2020 from "../../assets/2020.webp";
 import photo2021 from "../../assets/2021.webp";
@@ -20,20 +19,6 @@ const PhotoSlider = () => {
     { year: '2024', image: photo2024, alt: '2024' },
   ];
 
-  const nextSlide = () => {
-    if (!isTransitioning) {
-      setIsTransitioning(true);
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-    }
-  };
-
-  const previousSlide = () => {
-    if (!isTransitioning) {
-      setIsTransitioning(true);
-      setCurrentIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
-    }
-  };
-
   const goToSlide = (index) => {
     if (!isTransitioning && index !== currentIndex) {
       setIsTransitioning(true);
@@ -52,7 +37,6 @@ const PhotoSlider = () => {
   return (
     <div className="relative w-full max-w-5xl mx-auto px-4 py-8">
       <div className="relative aspect-[16/9] overflow-hidden rounded-xl shadow-lg">
-        {/* Main image */}
         <div className="absolute inset-0 flex transition-transform duration-500 ease-in-out"
              style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
           {slides.map((slide, index) => (
@@ -63,8 +47,8 @@ const PhotoSlider = () => {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent">
-                <div className="absolute bottom-0 left-0 p-6">
-                  <span className="text-6xl font-bold text-white tracking-tight">
+                <div className="absolute top-0 left-0 ">
+                  <span className=" p-2 text-2xl font-bold text-orange-100 tracking-tight">
                     {slide.year}
                   </span>
                 </div>
@@ -72,25 +56,9 @@ const PhotoSlider = () => {
             </div>
           ))}
         </div>
-
-        {/* Navigation buttons */}
-        <button
-          onClick={previousSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-colors duration-200"
-          disabled={isTransitioning}
-        >
-          <ChevronLeft className="h-6 w-6" />
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-colors duration-200"
-          disabled={isTransitioning}
-        >
-          <ChevronRight className="h-6 w-6" />
-        </button>
       </div>
 
-      {/* Thumbnail navigation */}
+      {/* Thumbnails */}
       <div className="flex justify-center gap-2 mt-4">
         {slides.map((_, index) => (
           <button
