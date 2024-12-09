@@ -28,34 +28,33 @@ const LocationsSection = () => {
 ];
 
     return (
-    <section id='details' className="py-16 px-4 max-w-6xl mx-auto">
+    <section id='details' className="py-16 px-4 md:px-0 max-w-6xl mx-auto">
     <h2 className="text-5xl mb-8">Lokalizacje</h2>
     <div className="grid md:grid-cols-3 gap-8 px-4">
         {locations.map((location, index) => (
         <div key={index} className='relative'>
             <div
-                className="bg-slate-50 rounded-lg shadow-lg p-6 transition-transform hover:-translate-y-1 text-sm flex flex-col"
+                className="bg-slate-50 rounded-lg shadow-lg p-6 transition-transform hover:-translate-y-1 text-sm flex flex-col max-w-72 md:w-52 h-full"
             >
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex gap-3 mb-4 flex-grow md:justify-center md:text-center">
                     <h3 className="text-gray-700 mt-4 font-bold">{location.place}</h3>
                 </div>
 
                 <div className="space-y-3 mb-6">
                     <p className="text-gray-600">{location.address}</p>
                     {location.time && (
-                        <div className="flex items-center gap-2 text-gray-500">
+                        <div className="flex gap-2 text-gray-500 md:justify-center">
                             <img className='w-4 h-4' src={clockIcon.src} alt="ikona zegara" />
                             <span>{location.time}</span>
                         </div>
                     )}
-                    <p className="text-gray-600 text-sm">{location.description}</p>
                 </div>
 
                 <a
                     href={location.mapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="items-center button  gap-2 bg-green-50 text-green-800 px-4 py-2 rounded-full hover:bg-green-100 transition-colors flex justify-center"
+                    className="items-center buttonSecondary gap-2 bg-green-50 text-green-800 px-4 py-2 rounded-full  flex justify-center max-w-40 mx-auto"
                 >
                     <img className="w-4 h-4" src={pinIcon.src} alt="ikona pinezki" />
                     <span>Pokaż trasę</span>

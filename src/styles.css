@@ -57,6 +57,24 @@ section {
 		color: aliceblue;
 	}
 
+.buttonSecondary {
+		border: 1px solid rgb(22, 80, 22);
+		color: rgb(22, 80, 22);
+		padding: 10px 20px;
+		cursor: pointer;
+		border-radius: 32px;
+		transition: 0.6s;
+		font-weight: bold;
+		background-color: transparent;
+		box-shadow:
+			0 4px 6px -1px rgb(22 80 22 / 0.1),
+			0 2px 4px -2px rgb(22 80 22 / 0.1);
+	}
+
+	.buttonSecondary:hover {
+		border: 3px solid rgb(22, 80, 22);
+	}
+
 	.leaf {
 		height: 40px;
 		width: auto;
@@ -127,3 +145,9 @@ section {
 			transform: rotate(3deg) translateX(3px);
 		}
 	}
+
+@media (min-width: 768px) {
+	.leaf {
+		height: 120px;
+	}
+}
