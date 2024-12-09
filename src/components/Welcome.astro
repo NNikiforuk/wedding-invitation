@@ -1,22 +1,18 @@
 ---
+import Details from "./function-components/Details";
 import PhotoSlider from "./function-components/PhotoSlider";
 import Header from "./Header.astro";
 ---
 
 <div class="container">
 	<Header />
-	<PhotoSlider client:load />
-	<main>
-		<section></section>
+	<main class="h-full flex flex-col justify-center">
+		<PhotoSlider client:load />
+		<Details />
 	</main>
 </div>
 
 <style>
-	main {
-		height: 100%;
-		display: flex;
-		justify-content: center;
-	}
 	h1 {
 		font-size: 22px;
 		margin-top: 0.25em;
