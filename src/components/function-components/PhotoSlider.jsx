@@ -111,13 +111,13 @@ const PhotoSlider = () => {
           onClick={previousSlide}
           disabled={isTransitioning}
         >
-          <img src={leftArrow.src} alt="strzałka w lewo" className='w-10 h-10' />
+          <img src={leftArrow.src} alt="strzałka w lewo" className='w-10 h-10 md:w-6 md:h-6' />
         </button>
         <button
           onClick={nextSlide}
           disabled={isTransitioning}
         >
-          <img src={rightArrow.src} alt="strzałka w prawo" className='w-10 h-10' />
+          <img src={rightArrow.src} alt="strzałka w prawo" className='w-10 h-10 md:w-6 md:h-6' />
         </button>
           </div>
     </section>
