@@ -6,6 +6,9 @@ import photo2022 from "../../assets/2022.webp";
 import photo2023 from "../../assets/2023.webp";
 import photo2024 from "../../assets/2024.webp";
 
+import leftArrow from "../../../public/icons/left.svg";
+import rightArrow from "../../../public/icons/right.svg";
+
 const PhotoSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -48,7 +51,7 @@ const PhotoSlider = () => {
     }
   };
 
-   const nextSlide = () => {
+  const nextSlide = () => {
     if (!isTransitioning) {
       setIsTransitioning(true);
       setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
@@ -103,21 +106,20 @@ const PhotoSlider = () => {
         </div>
       </div>
 
-      {/* Thumbnails */}
-      <div className="flex justify-center gap-2 mt-4">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              index === currentIndex
-                ? 'bg-green-900 w-8'
-                : 'bg-green-700 hover:bg-gray-400'
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
+          <div className='flex mt-4 justify-center gap-4'>
+      <button
+          onClick={previousSlide}
+          disabled={isTransitioning}
+        >
+          <img src={leftArrow.src} alt="strzałka w lewo" className='w-10 h-10' />
+        </button>
+        <button
+          onClick={nextSlide}
+          disabled={isTransitioning}
+        >
+          <img src={rightArrow.src} alt="strzałka w prawo" className='w-10 h-10' />
+        </button>
+          </div>
     </section>
   );
 };
