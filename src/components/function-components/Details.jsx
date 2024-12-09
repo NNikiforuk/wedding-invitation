@@ -1,10 +1,10 @@
 import "../../styles.css";
 
-import churchIcon from "../../../public/icons/church.svg";
-import partyIcon from "../../../public/icons/party.svg";
-import bedIcon from "../../../public/icons/bed.svg";
-import clockIcon from "../../../public/icons/clock.svg";
-import pinIcon from "../../../public/icons/pin.svg";
+import churchIcon from "../../assets/icons/church.svg";
+import partyIcon from "../../assets/icons/party.svg";
+import bedIcon from "../../assets/icons/bed.svg";
+import clockIcon from "../../assets/icons/clock.svg";
+import pinIcon from "../../assets/icons/pin.svg";
 
 const LocationsSection = () => {
     const locations = [

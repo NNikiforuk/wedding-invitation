@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
-import photo2019 from "../../assets/2019.webp";
-import photo2020 from "../../assets/2020.webp";
-import photo2021 from "../../assets/2021.webp";
-import photo2022 from "../../assets/2022.webp";
-import photo2023 from "../../assets/2023.webp";
-import photo2024 from "../../assets/2024.webp";
+import photo2019 from "../../assets/photos/2019.webp";
+import photo2020 from "../../assets/photos/2020.webp";
+import photo2021 from "../../assets/photos/2021.webp";
+import photo2022 from "../../assets/photos/2022.webp";
+import photo2023 from "../../assets/photos/2023.webp";
+import photo2024 from "../../assets/photos/2024.webp";
 
-import leftArrow from "../../../public/icons/left.svg";
-import rightArrow from "../../../public/icons/right.svg";
+import leftArrow from "../../assets/icons/left.svg";
+import rightArrow from "../../assets/icons/right.svg";
 
 const PhotoSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
