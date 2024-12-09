@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import photo2019 from "../../assets/2019.webp";
 import photo2020 from "../../assets/2020.webp";
 import photo2021 from "../../assets/2021.webp";
@@ -9,6 +9,9 @@ import photo2024 from "../../assets/2024.webp";
 const PhotoSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+  const sliderRef = useRef(null);
 
   const slides = [
     { year: '2019', image: photo2019, alt: '2019' },
@@ -18,6 +21,46 @@ const PhotoSlider = () => {
     { year: '2023', image: photo2023, alt: '2023' },
     { year: '2024', image: photo2024, alt: '2024' },
   ];
+
+    const minSwipeDistance = 50;
+
+    const handleTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe && !isTransitioning) {
+      nextSlide();
+    }
+    if (isRightSwipe && !isTransitioning) {
+      previousSlide();
+    }
+  };
+
+   const nextSlide = () => {
+    if (!isTransitioning) {
+      setIsTransitioning(true);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+    }
+  };
+
+  const previousSlide = () => {
+    if (!isTransitioning) {
+      setIsTransitioning(true);
+      setCurrentIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
+    }
+  };
 
   const goToSlide = (index) => {
     if (!isTransitioning && index !== currentIndex) {
@@ -36,7 +79,9 @@ const PhotoSlider = () => {
 
   return (
     <section className="relative w-full max-w-5xl mx-auto px-4 py-8">
-      <div className="relative aspect-[16/9] overflow-hidden rounded-xl shadow-lg">
+      <div ref={sliderRef} onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd} className="relative aspect-[16/9] overflow-hidden rounded-xl shadow-lg">
         <div className="absolute inset-0 flex transition-transform duration-500 ease-in-out"
              style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
           {slides.map((slide, index) => (
