@@ -11,18 +11,18 @@ const LocationsSection = () => {
     {
     place: "Kościół p.w. św. Antoniego Padewskiego w Parowej",
     time: "14:30",
-    mapsUrl: "https://www.google.pl/maps/dir/51.06265,16.9797404/Ko%C5%9Bci%C3%B3%C5%82+pw+%C5%9Bw.+Antoniego+Padewskiego,+59-724+Parowa/@51.2242625,15.4696643,9z/data=!3m1!4b1!4m10!4m9!1m1!4e1!1m5!1m1!1s0x4708b7fe7d73670b:0xdda4090dd392cb57!2m2!1d15.2782644!2d51.362867!3e0?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+    mapsUrl: "https://www.google.pl/maps/place/Ko%C5%9Bci%C3%B3%C5%82+pw+%C5%9Bw.+Antoniego+Padewskiego/@51.3628674,15.275504,17z/data=!3m1!4b1!4m6!3m5!1s0x4708b7fe7d73670b:0xdda4090dd392cb57!8m2!3d51.3628674!4d15.2780789!16s%2Fg%2F11cr_8b0w2?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
     icon: churchIcon,
     },
     {
     place: "Zamek Kliczków",
     time: "16:00",
-    mapsUrl: "https://www.google.pl/maps/dir/51.06265,16.9797404/Zamek+Kliczk%C3%B3w,+Kliczk%C3%B3w/@51.1760694,15.5462574,9z/data=!3m2!4b1!5s0x4708ca7c280e8e5f:0xfb9ce643161711e4!4m10!4m9!1m1!4e1!1m5!1m1!1s0x4708ca78d4d186cf:0xd2243f616f284edc!2m2!1d15.4336624!2d51.3364584!3e0?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+    mapsUrl: "https://www.google.pl/maps/place/Zamek+Kliczk%C3%B3w/@51.3364584,15.4310875,17z/data=!3m1!5s0x4708ca78d4dab351:0x3729d188ea0c52ea!4m9!3m8!1s0x4708ca78d4d186cf:0xd2243f616f284edc!5m2!4m1!1i2!8m2!3d51.3364584!4d15.4336624!16s%2Fg%2F11b7hk7m5j?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
     icon: partyIcon,
     },
     {
     place: "Folwark Książęcy",
-    mapsUrl: "https://www.google.pl/maps/dir/51.06265,16.9797404/Folwark+Ksi%C4%85%C5%BC%C4%99cy,+Kliczk%C3%B3w/@51.1753277,15.546586,9z/data=!3m2!4b1!5s0x4708ca7c280e8e5f:0xfb9ce643161711e4!4m10!4m9!1m1!4e1!1m5!1m1!1s0x4708ca7e80aa6ccb:0xbf3feeab4f387462!2m2!1d15.43516!2d51.3337344!3e0?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+    mapsUrl: "https://www.google.pl/maps/place/Folwark+Ksi%C4%85%C5%BC%C4%99cy/@51.3337343,15.4302891,17z/data=!3m2!4b1!5s0x4708ca7c280e8e5f:0xfb9ce643161711e4!4m9!3m8!1s0x4708ca7e80aa6ccb:0xbf3feeab4f387462!5m2!4m1!1i2!8m2!3d51.3337344!4d15.43516!16s%2Fg%2F11p5_hm7vj?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
     icon: bedIcon,
     },
 ];
