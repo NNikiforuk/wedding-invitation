@@ -44,7 +44,7 @@ const LocationsSection = () => {
                     <p className="text-gray-600">{location.address}</p>
                     {location.time && (
                         <div className="flex items-center gap-2 text-gray-500">
-                            <img className='w-4 h-4' src={clockIcon.src} alt="" />
+                            <img className='w-4 h-4' src={clockIcon.src} alt="ikona zegara" />
                             <span>{location.time}</span>
                         </div>
                     )}
@@ -57,12 +57,12 @@ const LocationsSection = () => {
                     rel="noopener noreferrer"
                     className="items-center button  gap-2 bg-green-50 text-green-800 px-4 py-2 rounded-full hover:bg-green-100 transition-colors flex justify-center"
                 >
-                    <img className="w-4 h-4" src={pinIcon.src} alt="" />
+                    <img className="w-4 h-4" src={pinIcon.src} alt="ikona pinezki" />
                     <span>Pokaż trasę</span>
                 </a>
             </div>
             <div className="absolute -top-4 -left-4 w-12 h-12 bg-yellow-50 rounded-full flex items-center shadow-md justify-center">
-                    <img className="w-6 h-6" src={location.icon.src} alt="ikona kościoła" />
+                    <img className="w-6 h-6" src={location.icon.src} alt={location.icon} />
                 </div></div>
         ))}
     </div>
